@@ -23,7 +23,6 @@ function verificar(){
     var genero = document.getElementsByName('genero')
     var gen = ''
 
-
     if (genero[0].checked) {
         gen = 'Mulher'
         if(idade >= 0 && idade < 10){
@@ -32,8 +31,10 @@ function verificar(){
             imag.src='imagens/violeta.jpg'
         } else if (idade < 50) {
            imag.src='imagens/mulher.png'
-        } else {
+        } else if (idade < 100) {
             imag.src='imagens/idosa.jpeg'
+        } else {
+            imag.src='imagens/vampira.jpg'            
         }
     } else if (genero[1].checked){
         gen = 'Homem'
@@ -43,13 +44,15 @@ function verificar(){
             imag.src='imagens/trunks.jpeg'
         } else if (idade < 60) {
             imag.src='imagens/homem.jpg'
-        } else {
+        } else if (idade < 100) {
             imag.src='imagens/homemidoso.jpg'
+        } else {
+            imag.src='imagens/vampiro.png'
         }
     }
-    
-    resultado.style.textAlign='center'
-    resultado.innerHTML = (`${gen} com ${idade} anos de idade.`)
+        resultado.style.textAlign='center'
+        resultado.innerHTML = (`${gen} com ${idade} anos de idade.`)
+
     }
 
 
